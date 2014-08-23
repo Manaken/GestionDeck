@@ -19,7 +19,7 @@ public class Deck {
 	public static final int RITUELS = 2;
 	public static final int ENCHANTEMENTS= 3;
 	public static final int ARTEFACTS = 4;
-	public static final int ARPENTEUR = 5;
+	public static final int ARPENTEURS = 5;
 	public static final int TERRAINS = 6;
 	
 	
@@ -57,7 +57,7 @@ public class Deck {
 	public Deck() {
 		super();
 		nomDeck = "";
-		cartePrincipale = new Carte();
+		cartePrincipale = null;
 		description = "";
 		couleurs = "";
 		liste = new ListeDeck();
@@ -183,10 +183,60 @@ public class Deck {
 		nbTypesCartes[RITUELS] = getListe().getListeRituels().size();
 		nbTypesCartes[ENCHANTEMENTS] = getListe().getListeEnchantements().size();
 		nbTypesCartes[ARTEFACTS] = getListe().getListeArtefacts().size();
-		nbTypesCartes[ARPENTEUR] = getListe().getListeArpenteurs().size();
+		nbTypesCartes[ARPENTEURS] = getListe().getListeArpenteurs().size();
 		nbTypesCartes[TERRAINS] = getListe().getListeTerrains().size();
 		
 		return nbTypesCartes;
+	}
+	
+	/**
+	 * Donne le coût moyen en mana du deck
+	 * @return
+	 */
+	public double getCMCMoyen() {
+		double cmcMoyen = 0.0;
+
+		ArrayList<Carte> listeCartes = new ArrayList<>();
+		listeCartes.addAll(getListe().getListeCreatures());
+		listeCartes.addAll(getListe().getListeEphemeres());
+		listeCartes.addAll(getListe().getListeRituels());
+		listeCartes.addAll(getListe().getListeEnchantements());
+		listeCartes.addAll(getListe().getListeArtefacts());
+		listeCartes.addAll(getListe().getListeArpenteurs());
+		
+		for (Carte carte : listeCartes) {
+			cmcMoyen += carte.coutCarte();
+		}
+		
+		return (Math.round(cmcMoyen*100.0/listeCartes.size()))/100.0;
+	}
+	
+	/**
+	 * Renvoie la liste des cartes du deck dont le cout est celui indiqué par le paramètre en entrée
+	 * @param cmcVoulu
+	 * @param etPlus si etPlus == true et si le cout de la carte est supérieur au cout voulu, la carte est intégrée à la liste.
+	 * @return
+	 */
+	public ArrayList<Carte> getListeCarteCMC(int cmcVoulu, boolean etPlus) {
+		ArrayList<Carte> listeCartes = new ArrayList<>();
+		ArrayList<Carte> listeCartesComplet = new ArrayList<>();
+		listeCartesComplet.addAll(getListe().getListeCreatures());
+		listeCartesComplet.addAll(getListe().getListeEphemeres());
+		listeCartesComplet.addAll(getListe().getListeRituels());
+		listeCartesComplet.addAll(getListe().getListeEnchantements());
+		listeCartesComplet.addAll(getListe().getListeArtefacts());
+		listeCartesComplet.addAll(getListe().getListeArpenteurs());
+		
+		
+		for (Carte carte : listeCartesComplet) {
+			if (carte.coutCarte() == cmcVoulu) {
+				listeCartes.add(carte);
+			}
+			if(carte.coutCarte() > cmcVoulu && etPlus) {
+				listeCartes.add(carte);
+			}
+		}
+		return listeCartes;
 	}
 
 	/*********************************\

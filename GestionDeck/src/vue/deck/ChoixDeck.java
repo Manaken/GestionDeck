@@ -72,29 +72,32 @@ public class ChoixDeck extends JFrame {
 		}
 		File[] fichiersDecks = repDecks.listFiles();
 		for(File deckFile : fichiersDecks) {
-			Deck deck = Deck.deserialiser(deckFile.getName());
-			listeDeck.addElement(deck.getNomDeck());
+			if (deckFile.isFile()) {
+				Deck deck = Deck.deserialiser(deckFile.getName());
+				listeDeck.addElement(deck.getNomDeck());
+			}
 		}
 
 		list = new JList<String>(listeDeck);
 		list.setBounds(35, 93, 218, 213);
 		contentPane.add(list);
-		
+
 		JButton btnChoixDuDeck = new JButton("Choisir le deck");
 		btnChoixDuDeck.setBounds(57, 54, 122, 23);
 		btnChoixDuDeck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				list.getSelectedValue();
-				Deck deck = Deck.deserialiser(list.getSelectedValue() + ".xml");;
-				
+				Deck deck = new Deck();
+				if (list.getSelectedValue() != null ) {
+					deck = Deck.deserialiser(list.getSelectedValue() + ".xml");
+				}
 				GestionDeck frame = new GestionDeck(deck);
 				frame.setVisible(true);
-				//dispose();
+				dispose();
 			}
 		});
 		contentPane.setLayout(null);
 		contentPane.add(btnChoixDuDeck);
-		
+
 		JButton btnChoixAlatoire = new JButton("Choix aléatoire");
 		btnChoixAlatoire.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -116,12 +119,12 @@ public class ChoixDeck extends JFrame {
 
 					}
 				}
-				
+
 			}
 		});
 		btnChoixAlatoire.setBounds(251, 54, 129, 23);
 		contentPane.add(btnChoixAlatoire);
-		
+
 
 	}
 }

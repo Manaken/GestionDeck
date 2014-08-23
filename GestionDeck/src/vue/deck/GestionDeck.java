@@ -3,18 +3,12 @@ package vue.deck;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,14 +17,21 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+
 import single.Singleton;
 import business.Carte;
 import business.Deck;
-import ch.rakudave.suggest.JSuggestField;
 
 public class GestionDeck extends JFrame {
 
@@ -43,11 +44,10 @@ public class GestionDeck extends JFrame {
 	private JFileChooser selectFichier;
 	private JEditorPane txtListeDeck;
 
-
 	private Deck deck;
-	private JSuggestField txtCartePrinc;
 	private JLabel lblImgCartePrinc;
-	
+	private JTextField txtCoutMoyen;
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +55,7 @@ public class GestionDeck extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GestionDeck frame = new GestionDeck(new Deck());
+					GestionDeck frame = new GestionDeck(Deck.deserialiser("GBW Rock.xml"));
 					frame.setVisible(true);
 
 				} catch (Exception e) {
@@ -78,7 +78,7 @@ public class GestionDeck extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		String chemin = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.import");
 		File dossierFichierImport = new File(chemin);
 		if (!dossierFichierImport.isDirectory()) {
@@ -88,7 +88,7 @@ public class GestionDeck extends JFrame {
 		selectFichier = new JFileChooser(dossierFichierImport);
 		selectFichier.setBounds(250, 300, 353, -160);
 		contentPane.add(selectFichier);
-		
+
 		nomDeck = new JTextField(this.deck.getNomDeck());
 		nomDeck.setBounds(196, 11, 353, 28);
 		contentPane.add(nomDeck);		
@@ -110,7 +110,7 @@ public class GestionDeck extends JFrame {
 		lblDescriptionDuDeck.setBounds(10, 62, 124, 14);
 		contentPane.add(lblDescriptionDuDeck);
 
-		
+
 
 		JButton btnSaisirLaListe = new JButton("Saisir la liste");
 		btnSaisirLaListe.addActionListener(new ActionListener() {
@@ -125,62 +125,6 @@ public class GestionDeck extends JFrame {
 
 
 		String listeDeck = this.deck.getListe().toStringName();
-		txtListeDeck = new JEditorPane("text/html", listeDeck);
-		txtListeDeck.setAutoscrolls(true);
-		txtListeDeck.setBounds(618, 36, 272, 702);
-		contentPane.add(txtListeDeck);
-		txtListeDeck.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				String nomCarte = GestionDeck.this.deck.getListe().getListe().get((e.getY()-(txtListeDeck.getFont().getSize()+7))/(txtListeDeck.getFont().getSize()+7));
-				Carte carte = Carte.rechercheCarte(nomCarte);
-				if (carte != null) {
-					GestionDeck.this.txtCartePrinc.setText(nomCarte);
-					lblImgCartePrinc.setIcon(null);
-					lblImgCartePrinc.setText("");
-					if (!txtCartePrinc.getText().isEmpty()) {
-						Carte carteTempo = Carte.rechercheCarte(txtCartePrinc.getText());
-						if (carteTempo != null) {
-							ImageIcon image = Singleton.getInstance().getImage(carteTempo, 0);
-							lblImgCartePrinc.setIcon(image);
-						} else {
-							String pasImage = "Aucune carte ne correspond à ce nom";
-							lblImgCartePrinc.setText(pasImage);
-
-						}
-					} else {
-						String pasImage = "Tape le nom d'une carte";
-						lblImgCartePrinc.setText(pasImage);
-					}
-				}
-				
-			}
-		});
 		JButton btnSaisirPartir = new JButton("Saisir à partir d'un fichier");
 		btnSaisirPartir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -193,13 +137,13 @@ public class GestionDeck extends JFrame {
 					frame.setVisible(true);
 					GestionDeck.this.dispose();
 				}
-				
+
 			}
 
 		});
 		btnSaisirPartir.setBounds(10, 267, 189, 23);
 		contentPane.add(btnSaisirPartir);
-		
+
 		JButton btnRevenirLa = new JButton("Revenir à la liste");
 		btnRevenirLa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -210,80 +154,19 @@ public class GestionDeck extends JFrame {
 		});
 		btnRevenirLa.setBounds(322, 220, 150, 23);
 		contentPane.add(btnRevenirLa);
-		
-		JLabel lblNomDeLa = new JLabel("Nom de la carte principale ");
-		lblNomDeLa.setBounds(10, 314, 169, 14);
+
+		JLabel lblNomDeLa = new JLabel("Carte principale ");
+		lblNomDeLa.setBounds(77, 314, 109, 14);
 		contentPane.add(lblNomDeLa);
-		
-		txtCartePrinc = new JSuggestField(this);
-		if (deck.getCartePrincipale() != null) {
-			txtCartePrinc.setText(deck.getCartePrincipale().getName());
-		}
-		txtCartePrinc.setBounds(200, 311, 233, 23);
-		contentPane.add(txtCartePrinc);
-		txtCartePrinc.setColumns(10);
-		
+
 		lblImgCartePrinc = new JLabel();
 		Carte carte = deck.getCartePrincipale();
 		if (carte != null) {
 			ImageIcon image = Singleton.getInstance().getImage(carte, 0);
 			lblImgCartePrinc.setIcon(image);
 		}
-		lblImgCartePrinc.setBounds(50, 358, 223, 310);
+		lblImgCartePrinc.setBounds(10, 333, 223, 310);
 		contentPane.add(lblImgCartePrinc);
-		
-		txtCartePrinc.addKeyListener(new KeyListener() {
-			
-			@Override
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void keyReleased(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-				// Si le nom de la carte fait au moins 3 caratères de long 
-				// (txtNomcarte.getText() + arg0.getChar()
-				if (txtCartePrinc.getText().length() > 1) {
-					// Une liste de noms de cartes est recherchée en fonction des lettres saisies
-					ArrayList<String> listeNomCartes = Carte.getListeCarteSuggeree(txtCartePrinc.getText()+arg0.getKeyChar(), 5);
-					
-					Vector<String> vecteurNomsCartes = new Vector<>();
-					for (String nomCarte : listeNomCartes) {
-						vecteurNomsCartes.add(nomCarte);
-					}
-					txtCartePrinc.setSuggestData(vecteurNomsCartes);
-				}
-				
-			}
-		});
-		txtCartePrinc.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent arg0) {
-				lblImgCartePrinc.setIcon(null);
-				lblImgCartePrinc.setText("");
-				if (!txtCartePrinc.getText().isEmpty()) {
-					Carte carte = Carte.rechercheCarte(txtCartePrinc.getText());
-					if (carte != null) {
-						ImageIcon image = Singleton.getInstance().getImage(carte, 0);
-						lblImgCartePrinc.setIcon(image);
-					} else {
-						String pasImage = "Aucune carte ne correspond à ce nom";
-						lblImgCartePrinc.setText(pasImage);
-
-					}
-				} else {
-					String pasImage = "Tape le nom d'une carte";
-					lblImgCartePrinc.setText(pasImage);
-				}
-			}
-		});
 
 		JButton btnSauvegarder = new JButton("Sauvegarder");
 		btnSauvegarder.addActionListener(new ActionListener() {
@@ -299,17 +182,15 @@ public class GestionDeck extends JFrame {
 					File[] fichiersDecks = repDecks.listFiles();
 					int nbDecks = 0;
 					for (File ficDeck : fichiersDecks) {
-						Deck deckTempo = Deck.deserialiser(ficDeck.getName());
-						if (deckTempo.getNumDeck() > nbDecks) {
-							nbDecks = deckTempo.getNumDeck();
+						if (ficDeck.isFile()) {
+							Deck deckTempo = Deck.deserialiser(ficDeck.getName());
+							if (deckTempo.getNumDeck() > nbDecks) {
+								nbDecks = deckTempo.getNumDeck();
+							}
 						}
 					}
 					if (GestionDeck.this.deck.getNumDeck() == 0) {
 						GestionDeck.this.deck.setNumDeck(nbDecks+1);
-					}
-					if (!txtCartePrinc.getText().isEmpty()) {
-						Carte carte = Carte.rechercheCarte(txtCartePrinc.getText());
-						GestionDeck.this.deck.setCartePrincipale(carte);
 					}
 					GestionDeck.this.deck.serialiser();
 				}
@@ -317,13 +198,13 @@ public class GestionDeck extends JFrame {
 		});
 		btnSauvegarder.setBounds(162, 220, 118, 23);
 		contentPane.add(btnSauvegarder);
-		
+
 		JButton btnEditerLaListe = new JButton("Editer la liste");
 		btnEditerLaListe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String dossierDeckExport = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.export");
 				File file = new File(dossierDeckExport + GestionDeck.this.deck.getNomDeck() + ".html");
-				
+
 				try {
 					file.createNewFile();
 					FileOutputStream out = new FileOutputStream(file);
@@ -331,7 +212,7 @@ public class GestionDeck extends JFrame {
 					out.write(listeCarte.getBytes());
 					out.flush();
 					out.close();
-					
+
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -339,13 +220,127 @@ public class GestionDeck extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+
 			}
 		});
 		btnEditerLaListe.setBounds(248, 267, 131, 23);
 		contentPane.add(btnEditerLaListe);
+
+		int [] nbTypesCartes = deck.getnbTypesCartes();
+
+		DefaultPieDataset pieDataset = new DefaultPieDataset();
+		if (nbTypesCartes[Deck.CREATURES] > 0) {
+			pieDataset.setValue("Créatures", nbTypesCartes[Deck.CREATURES]);
+		}
+		if (nbTypesCartes[Deck.EPHEMERES] > 0) {
+			pieDataset.setValue("Ephémères", nbTypesCartes[Deck.EPHEMERES]);
+		}
+		if (nbTypesCartes[Deck.RITUELS] > 0) {
+			pieDataset.setValue("Rituels", nbTypesCartes[Deck.RITUELS]);
+		}
+		if (nbTypesCartes[Deck.ENCHANTEMENTS] > 0) {
+			pieDataset.setValue("Enchantements", nbTypesCartes[Deck.ENCHANTEMENTS]);
+		}
+		if (nbTypesCartes[Deck.ARTEFACTS] > 0) {
+			pieDataset.setValue("Artefacts", nbTypesCartes[Deck.ARTEFACTS]);
+		}
+		if (nbTypesCartes[Deck.ARPENTEURS] > 0) {
+			pieDataset.setValue("Arpenteurs", nbTypesCartes[Deck.ARPENTEURS]);
+		}
+		if (nbTypesCartes[Deck.TERRAINS] > 0) {
+			pieDataset.setValue("Terrains", nbTypesCartes[Deck.TERRAINS]);
+		}
+
+		JFreeChart pieChart = ChartFactory.createPieChart3D("",
+				pieDataset, false, false, true);
+
+		ChartPanel cPanel = new ChartPanel(pieChart);
+		cPanel.setMouseZoomable(true);
+		cPanel.setDisplayToolTips(false);
+		cPanel.setBounds(322, 314, 265, 200);
+
+		contentPane.add(cPanel);
 		
+		DefaultCategoryDataset catDataset = new DefaultCategoryDataset();
+		catDataset.setValue(deck.getListeCarteCMC(0, false).size(),"Nb cartes", "0");
+		catDataset.setValue(deck.getListeCarteCMC(1, false).size(),"Nb cartes", "1");
+		catDataset.setValue(deck.getListeCarteCMC(2, false).size(),"Nb cartes", "2");
+		catDataset.setValue(deck.getListeCarteCMC(3, false).size(),"Nb cartes", "3");
+		catDataset.setValue(deck.getListeCarteCMC(4, false).size(),"Nb cartes", "4");
+		catDataset.setValue(deck.getListeCarteCMC(5, false).size(),"Nb cartes", "5");
+		catDataset.setValue(deck.getListeCarteCMC(6, true).size(),"Nb cartes", "6");
+		JFreeChart histoChart = ChartFactory.createBarChart("", "",
+				"", catDataset, PlotOrientation.VERTICAL, true, true, false);
 		
+		ChartPanel cPanel2 = new ChartPanel(histoChart);
+		cPanel2.setLocation(322, 553);
+		cPanel2.setSize(265, 200);
+		contentPane.add(cPanel2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(620, 29, 272, 702);
+		contentPane.add(scrollPane);
+		txtListeDeck = new JEditorPane("text/html", listeDeck);
+		scrollPane.setViewportView(txtListeDeck);
+		txtListeDeck.setAutoscrolls(true);
+		
+		JLabel lblCotMoyen = new JLabel("Coût moyen");
+		lblCotMoyen.setBounds(322, 528, 76, 14);
+		
+		contentPane.add(lblCotMoyen);
+		
+		txtCoutMoyen = new JTextField();
+		txtCoutMoyen.setEditable(false);
+		txtCoutMoyen.setBounds(412, 525, 86, 20);
+		txtCoutMoyen.setText(""+deck.getCMCMoyen());
+		contentPane.add(txtCoutMoyen);
+		txtListeDeck.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String nomCarte = GestionDeck.this.deck.getListe().getListe().get((e.getY()-(txtListeDeck.getFont().getSize()+7))/(txtListeDeck.getFont().getSize()+7));
+				Carte carte = Carte.rechercheCarte(nomCarte);
+				deck.setCartePrincipale(carte);
+				if (carte != null) {
+					carte.coutCarte();
+					lblImgCartePrinc.setIcon(null);
+					lblImgCartePrinc.setText("");
+					ImageIcon image = Singleton.getInstance().getImage(carte, 0);
+					lblImgCartePrinc.setIcon(image);
+				} else {
+					String pasImage = "Aucune carte ne correspond à ce nom";
+					lblImgCartePrinc.setText(pasImage);
+
+
+				}
+
+			}
+		});
+
 	}
 
 	/**
