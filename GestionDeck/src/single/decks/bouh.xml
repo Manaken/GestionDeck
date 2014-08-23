@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_06" class="java.beans.XMLDecoder">
+ <object class="business.Deck">
+  <void property="couleurs">
+   <string>10101</string>
+  </void>
+  <void property="description">
+   <string>pl^poiolij	*
+ùd</string>
+  </void>
+  <void property="nomDeck">
+   <string>bouh</string>
+  </void>
+  <void property="numDeck">
+   <int>2</int>
+  </void>
+ </object>
+</java>

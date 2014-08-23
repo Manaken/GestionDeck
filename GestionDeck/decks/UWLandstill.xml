@@ -1,0 +1,3118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_06" class="java.beans.XMLDecoder">
+ <object class="business.Deck">
+  <void property="cartePrincipale">
+   <void property="manacost">
+    <string>2UU</string>
+   </void>
+   <void property="name">
+    <string>Jace, the Mind Sculptor</string>
+   </void>
+   <void property="set">
+    <void property="lienImages">
+     <void index="0">
+      <void property="edition">
+       <string>V13</string>
+      </void>
+      <void property="lienUrl">
+       <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373316&amp;type=card</string>
+      </void>
+     </void>
+     <void index="1">
+      <void property="edition">
+       <string>WWK</string>
+      </void>
+      <void property="lienUrl">
+       <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=195297&amp;type=card</string>
+      </void>
+     </void>
+    </void>
+   </void>
+   <void property="text">
+    <string>+2: Look at the top card of target player&apos;s library. You may put that card on the bottom of that player&apos;s library.
+0: Draw three cards, then put two cards from your hand on top of your library in any order.
+-1: Return target creature to its owner&apos;s hand.
+-12: Exile all cards from target player&apos;s library, then that player shuffles his or her hand into his or her library.</string>
+   </void>
+   <void property="type">
+    <string>Planeswalker - Jace</string>
+   </void>
+  </void>
+  <void property="couleurs">
+   <string>10101</string>
+  </void>
+  <void property="description">
+   <null/>
+  </void>
+  <void property="liste">
+   <void property="liste">
+    <void method="add">
+     <string>Ephémères</string>
+    </void>
+    <void method="add">
+     <string>Brainstorm</string>
+    </void>
+    <void method="add">
+     <string>Counterspell</string>
+    </void>
+    <void method="add">
+     <string>Enlightened Tutor</string>
+    </void>
+    <void method="add">
+     <string>Force of Will</string>
+    </void>
+    <void method="add">
+     <string>Pyroblast</string>
+    </void>
+    <void method="add">
+     <string>Spell Pierce</string>
+    </void>
+    <void method="add">
+     <string>Swords to Plowshares</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+    <void method="add">
+     <string>Rituels</string>
+    </void>
+    <void method="add">
+     <string>Entreat the Angels</string>
+    </void>
+    <void method="add">
+     <string>Ponder</string>
+    </void>
+    <void method="add">
+     <string>Terminus</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+    <void method="add">
+     <string>Enchantements</string>
+    </void>
+    <void method="add">
+     <string>Counterbalance</string>
+    </void>
+    <void method="add">
+     <string>Humility</string>
+    </void>
+    <void method="add">
+     <string>Standstill</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+    <void method="add">
+     <string>Artefacts</string>
+    </void>
+    <void method="add">
+     <string>Crucible of Worlds</string>
+    </void>
+    <void method="add">
+     <string>Sensei&apos;s Divining Top</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+    <void method="add">
+     <string>Arpenteurs</string>
+    </void>
+    <void method="add">
+     <string>Elspeth, Knight-Errant</string>
+    </void>
+    <void method="add">
+     <string>Jace, the Mind Sculptor</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+    <void method="add">
+     <string>Terrains</string>
+    </void>
+    <void method="add">
+     <string>Academy Ruins</string>
+    </void>
+    <void method="add">
+     <string>Flooded Strand</string>
+    </void>
+    <void method="add">
+     <string>Island</string>
+    </void>
+    <void method="add">
+     <string>Karakas</string>
+    </void>
+    <void method="add">
+     <string>Mishra&apos;s Factory</string>
+    </void>
+    <void method="add">
+     <string>Plains</string>
+    </void>
+    <void method="add">
+     <string>Scalding Tarn</string>
+    </void>
+    <void method="add">
+     <string>Tundra</string>
+    </void>
+    <void method="add">
+     <string>Volcanic Island</string>
+    </void>
+    <void method="add">
+     <string>Wasteland</string>
+    </void>
+    <void method="add">
+     <string></string>
+    </void>
+   </void>
+   <void property="listeArpenteurs">
+    <void method="add">
+     <object class="business.Carte">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>2WW</string>
+      </void>
+      <void property="name">
+       <string>Elspeth, Knight-Errant</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDF</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=217825&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=370551&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ALA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=174859&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>+1: Put a 1/1 white Soldier creature token onto the battlefield.
++1: Target creature gets +3/+3 and gains flying until end of turn.
+-8: You get an emblem with &quot;Artifacts, creatures, enchantments, and lands you control have indestructible.&quot;</string>
+      </void>
+      <void property="type">
+       <string>Planeswalker - Elspeth</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte0">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>2UU</string>
+      </void>
+      <void property="name">
+       <string>Jace, the Mind Sculptor</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>V13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373316&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>WWK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=195297&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>+2: Look at the top card of target player&apos;s library. You may put that card on the bottom of that player&apos;s library.
+0: Draw three cards, then put two cards from your hand on top of your library in any order.
+-1: Return target creature to its owner&apos;s hand.
+-12: Exile all cards from target player&apos;s library, then that player shuffles his or her hand into his or her library.</string>
+      </void>
+      <void property="type">
+       <string>Planeswalker - Jace</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte0"/>
+    </void>
+   </void>
+   <void property="listeArtefacts">
+    <void method="add">
+     <object class="business.Carte">
+      <void property="manacost">
+       <string>3</string>
+      </void>
+      <void property="name">
+       <string>Crucible of Worlds</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5DN</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=51133&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>10E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129480&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>You may play land cards from your graveyard.</string>
+      </void>
+      <void property="type">
+       <string>Artifact</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte1">
+      <void property="manacost">
+       <string>1</string>
+      </void>
+      <void property="name">
+       <string>Sensei&apos;s Divining Top</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CHK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=50400&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>FVE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=194972&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{1}: Look at the top three cards of your library, then put them back in any order.
+{T}: Draw a card, then put Sensei&apos;s Divining Top on top of its owner&apos;s library.</string>
+      </void>
+      <void property="type">
+       <string>Artifact</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte1"/>
+    </void>
+    <void method="add">
+     <object idref="Carte1"/>
+    </void>
+   </void>
+   <void property="listeEnchantements">
+    <void method="add">
+     <object class="business.Carte" id="Carte2">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>UU</string>
+      </void>
+      <void property="name">
+       <string>Counterbalance</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CSP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=121159&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Whenever an opponent casts a spell, you may reveal the top card of your library. If you do, counter that spell if it has the same converted mana cost as the revealed card.</string>
+      </void>
+      <void property="type">
+       <string>Enchantment</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte2"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>2WW</string>
+      </void>
+      <void property="name">
+       <string>Humility</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TMP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4881&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>All creatures lose all abilities and are 1/1.</string>
+      </void>
+      <void property="type">
+       <string>Enchantment</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>1U</string>
+      </void>
+      <void property="name">
+       <string>Standstill</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ODY</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29936&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>When a player casts a spell, sacrifice Standstill. If you do, each of that player&apos;s opponents draws three cards.</string>
+      </void>
+      <void property="type">
+       <string>Enchantment</string>
+      </void>
+     </object>
+    </void>
+   </void>
+   <void property="listeEphemeres">
+    <void method="add">
+     <object class="business.Carte" id="Carte3">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>U</string>
+      </void>
+      <void property="name">
+       <string>Brainstorm</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BTD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=27246&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDJ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=292751&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3897&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2497&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>COM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=247331&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CNS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382224&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=184606&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMQ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19571&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Draw three cards, then put two cards from your hand on top of your library in any order.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte3"/>
+    </void>
+    <void method="add">
+     <object idref="Carte3"/>
+    </void>
+    <void method="add">
+     <object idref="Carte3"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte4">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>UU</string>
+      </void>
+      <void property="name">
+       <string>Counterspell</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BRB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21127&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BTD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=26644&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>6E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14511&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>D2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=185820&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3898&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>4E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2148&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2500&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=102&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=184687&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME4</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=202437&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMQ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19570&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1196&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>7E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=11214&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S99</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=20382&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S00</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=25503&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TMP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4693&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=699&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Counter target spell.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte4"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>W</string>
+      </void>
+      <void property="name">
+       <string>Enlightened Tutor</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>6E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15355&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MIR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3489&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Search your library for an artifact or enchantment card and reveal that card. Shuffle your library, then put the card on top of it.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte5">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>3UU</string>
+      </void>
+      <void property="name">
+       <string>Force of Will</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ALL</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3107&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159092&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>You may pay 1 life and exile a blue card from your hand rather than pay Force of Will&apos;s mana cost.
+Counter target spell.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte5"/>
+    </void>
+    <void method="add">
+     <object idref="Carte5"/>
+    </void>
+    <void method="add">
+     <object idref="Carte5"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="color">
+       <string>R</string>
+      </void>
+      <void property="manacost">
+       <string>R</string>
+      </void>
+      <void property="name">
+       <string>Pyroblast</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4083&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2649&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159243&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Choose one - Counter target spell if it&apos;s blue; or destroy target permanent if it&apos;s blue.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte6">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>U</string>
+      </void>
+      <void property="name">
+       <string>Spell Pierce</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ZEN</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=178144&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Counter target noncreature spell unless its controller pays {2}.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte6"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte7">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>W</string>
+      </void>
+      <void property="name">
+       <string>Swords to Plowshares</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BRB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21172&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDF</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=218581&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>4E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2367&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>V13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373334&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2714&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=271&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=567&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CNS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382380&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=184675&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME4</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=202462&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1367&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=869&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Exile target creature. Its controller gains life equal to its power.</string>
+      </void>
+      <void property="type">
+       <string>Instant</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte7"/>
+    </void>
+    <void method="add">
+     <object idref="Carte7"/>
+    </void>
+    <void method="add">
+     <object idref="Carte7"/>
+    </void>
+   </void>
+   <void property="listeRituels">
+    <void method="add">
+     <object class="business.Carte" id="Carte8">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>XXWWW</string>
+      </void>
+      <void property="name">
+       <string>Entreat the Angels</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>AVR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=247426&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Put X 4/4 white Angel creature tokens with flying onto the battlefield.
+Miracle {X}{W}{W} (You may cast this card for its miracle cost when you draw it if it&apos;s the first card you drew this turn.)</string>
+      </void>
+      <void property="type">
+       <string>Sorcery</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte8"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte9">
+      <void property="color">
+       <string>U</string>
+      </void>
+      <void property="manacost">
+       <string>U</string>
+      </void>
+      <void property="name">
+       <string>Ponder</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LRW</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=139512&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M10</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=190159&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M12</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=244313&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Look at the top three cards of your library, then put them back in any order. You may shuffle your library.
+Draw a card.</string>
+      </void>
+      <void property="type">
+       <string>Sorcery</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte9"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte10">
+      <void property="color">
+       <string>W</string>
+      </void>
+      <void property="manacost">
+       <string>4WW</string>
+      </void>
+      <void property="name">
+       <string>Terminus</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>AVR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=262703&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>Put all creatures on the bottom of their owners&apos; libraries.
+Miracle {W} (You may cast this card for its miracle cost when you draw it if it&apos;s the first card you drew this turn.)</string>
+      </void>
+      <void property="type">
+       <string>Sorcery</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte10"/>
+    </void>
+    <void method="add">
+     <object idref="Carte10"/>
+    </void>
+   </void>
+   <void property="listeTerrains">
+    <void method="add">
+     <object class="business.Carte">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Academy Ruins</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=370424&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TSP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=116725&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}: Add {1} to your mana pool.
+{1}{U}, {T}: Put target artifact card from your graveyard on top of your library.</string>
+      </void>
+      <void property="type">
+       <string>Legendary Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte11">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Flooded Strand</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ONS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=39503&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}, Pay 1 life, Sacrifice Flooded Strand: Search your library for a Plains or Island card and put it onto the battlefield. Then shuffle your library.</string>
+      </void>
+      <void property="type">
+       <string>Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte11"/>
+    </void>
+    <void method="add">
+     <object idref="Carte11"/>
+    </void>
+    <void method="add">
+     <object idref="Carte11"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte12">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Island</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ARC</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221300&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>AVR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=269639&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BRB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22366&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BTD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=27238&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CHK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=79069&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>6E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14738&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>C13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=376373&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=259287&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDF</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222727&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDJ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=292765&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>D2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=190583&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=380217&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=210511&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDI</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=284491&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>8E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=46442&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4201&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>4E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2391&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2769&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ISD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=245235&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>INV</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=26301&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=293&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=594&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LRW</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=143624&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M10</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=191389&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M11</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213617&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M12</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=244323&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249725&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M14</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=370608&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>COM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249807&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159281&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME3</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=206072&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMQ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=20885&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MIR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3583&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MRD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48411&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MBS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220365&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>NPH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=227530&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>9E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=83137&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ODY</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31614&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ONS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=40119&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PCH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205287&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PC2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=276471&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>POR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4423&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PO2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=8390&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PTK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=10641&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>H09</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=207935&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>RAV</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=95107&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>RTR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=289315&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1394&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ROE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205939&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>SOM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214666&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>7E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=11349&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>SHM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=157874&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ALA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=174978&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S99</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21794&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S00</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=25452&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TMP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4951&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>10E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129607&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>THS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373595&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TSP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=122077&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>UGL</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=9677&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>UNH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=73951&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=896&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>USG</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=8327&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ZEN</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201964&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>U</string>
+      </void>
+      <void property="type">
+       <string>Basic Land - Island</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte12"/>
+    </void>
+    <void method="add">
+     <object idref="Carte12"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Karakas</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEG</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1701&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME3</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201198&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}: Add {W} to your mana pool.
+{T}: Return target legendary creature to its owner&apos;s hand.</string>
+      </void>
+      <void property="type">
+       <string>Legendary Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte13">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Mishra&apos;s Factory</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ATQ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1073&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDF</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=218340&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>4E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2387&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159114&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}: Add {1} to your mana pool.
+{1}: Mishra&apos;s Factory becomes a 2/2 Assembly-Worker artifact creature until end of turn. It&apos;s still a land.
+{T}: Target Assembly-Worker creature gets +1/+1 until end of turn.</string>
+      </void>
+      <void property="type">
+       <string>Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte13"/>
+    </void>
+    <void method="add">
+     <object idref="Carte13"/>
+    </void>
+    <void method="add">
+     <object idref="Carte13"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte14">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Plains</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ARC</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221309&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>AVR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=269637&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>BRB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22361&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>CHK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=79063&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>6E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14734&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>C13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=376454&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249376&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDC</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=197256&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDF</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222752&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDL</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373369&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDG</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=243457&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=210513&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=368473&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>DDI</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=284497&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>8E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=46438&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>5E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4205&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>4E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2386&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ICE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2773&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ISD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=245230&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>INV</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=26298&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=295&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=597&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LRW</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=143630&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M10</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=191382&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M11</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213612&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M12</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=244331&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M13</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249732&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>M14</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=370754&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>COM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=249813&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159287&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME3</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=206079&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MMQ</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=20881&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MIR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3587&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MRD</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48407&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>MBS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220366&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>NPH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=227552&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>9E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=83208&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ODY</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31629&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ONS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=40123&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PCH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205430&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PC2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=276459&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>POR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4427&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PO2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=8374&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>PTK</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=10645&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>H09</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=207937&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>RAV</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=95112&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>RTR</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=289311&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1397&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ROE</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205938&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>SOM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214679&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>7E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=11447&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>SHM</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=158236&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ALA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=175030&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S99</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21792&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>S00</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=25454&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TMP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4955&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>10E</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129681&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>THS</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373533&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TSP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=122087&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>UGL</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=9680&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>UNH</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=73963&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=899&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>USG</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=8323&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ZEN</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201972&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>W</string>
+      </void>
+      <void property="type">
+       <string>Basic Land - Plains</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte14"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte15">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Scalding Tarn</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ZEN</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=190393&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}, Pay 1 life, Sacrifice Scalding Tarn: Search your library for an Island or Mountain card and put it onto the battlefield. Then shuffle your library.</string>
+      </void>
+      <void property="type">
+       <string>Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte15"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte16">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Tundra</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEA</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=286&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=583&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME2</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=184751&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME4</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=202424&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1383&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=885&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="type">
+       <string>Land - Plains Island</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte16"/>
+    </void>
+    <void method="add">
+     <object idref="Carte16"/>
+    </void>
+    <void method="add">
+     <object idref="Carte16"/>
+    </void>
+    <void method="add">
+     <object class="business.Carte">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Volcanic Island</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>LEB</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=585&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME3</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201406&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>ME4</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=202442&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>3ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1385&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>2ED</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=887&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="type">
+       <string>Land - Island Mountain</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="business.Carte" id="Carte17">
+      <void property="manacost">
+       <string></string>
+      </void>
+      <void property="name">
+       <string>Wasteland</string>
+      </void>
+      <void property="set">
+       <object class="business.ImagesCartes">
+        <void property="lienImages">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="business.ImageCarte">
+            <void property="edition">
+             <string>TMP</string>
+            </void>
+            <void property="lienUrl">
+             <string>http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4944&amp;type=card</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="text">
+       <string>{T}: Add {1} to your mana pool.
+{T}, Sacrifice Wasteland: Destroy target nonbasic land.</string>
+      </void>
+      <void property="type">
+       <string>Land</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="Carte17"/>
+    </void>
+   </void>
+  </void>
+  <void property="nomDeck">
+   <string>UWLandstill</string>
+  </void>
+  <void property="numDeck">
+   <int>18</int>
+  </void>
+ </object>
+</java>

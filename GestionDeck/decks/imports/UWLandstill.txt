@@ -1,0 +1,43 @@
+// NAME : UWr Landstill
+// CREATOR : Manaken (magic-ville.com)
+// FORMAT : 
+        1 Academy Ruins
+        1 Karakas
+        1 Volcanic Island
+        2 Plains
+        2 Scalding Tarn
+        2 Wasteland
+        3 Island
+        4 Flooded Strand
+        4 Mishra's Factory
+        4 Tundra
+        1 Elspeth, Knight-Errant
+        2 Jace, the Mind Sculptor
+        1 Crucible of Worlds
+        3 Sensei's Divining Top
+        1 Humility
+        1 Standstill
+        2 Counterbalance
+        1 Enlightened Tutor
+        1 Pyroblast
+        2 Counterspell
+        2 Spell Pierce
+        4 Brainstorm
+        4 Force of Will
+        4 Swords to Plowshares
+        2 Entreat the Angels
+        2 Ponder
+        3 Terminus
+SB:  1 Venser, Shaper Savant
+SB:  1 Red Elemental Blast
+SB:  1 Rest in Peace
+SB:  1 Pyroclasm
+SB:  1 Pyrostatic Pillar
+SB:  1 Mountain
+SB:  1 Surgical Extraction
+SB:  1 Engineered Explosives
+SB:  1 Ethersworn Canonist
+SB:  1 Grafdigger's Cage
+SB:  2 Wear / Tear
+SB:  2 Detention Sphere
+SB:  1 Humility
