@@ -219,7 +219,7 @@ public class GestionDeck extends JFrame {
 		if (deck.getCartePrincipale() != null) {
 			txtCartePrinc.setText(deck.getCartePrincipale().getName());
 		}
-		txtCartePrinc.setBounds(145, 311, 233, 23);
+		txtCartePrinc.setBounds(200, 311, 233, 23);
 		contentPane.add(txtCartePrinc);
 		txtCartePrinc.setColumns(10);
 		
