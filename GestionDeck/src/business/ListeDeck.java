@@ -13,7 +13,7 @@ public class ListeDeck {
 	private ArrayList<Carte> listeEnchantements;
 	private ArrayList<Carte> listeEphemeres;
 	private ArrayList<Carte> listeRituels;
-	private ArrayList<Carte> listeArpenteurs;
+	private ArrayList<Carte> listePlaneswalkers;
 	private ArrayList<Carte> listeTerrains;
 
 	public ListeDeck() {
@@ -24,7 +24,7 @@ public class ListeDeck {
 		listeEnchantements = new ArrayList<>();
 		listeEphemeres = new ArrayList<>();
 		listeRituels = new ArrayList<>();
-		listeArpenteurs = new ArrayList<>();
+		listePlaneswalkers = new ArrayList<>();
 		listeTerrains = new ArrayList<>();
 	}
 
@@ -83,7 +83,7 @@ public class ListeDeck {
 			listeTerrains.add(carte);
 
 		} else if (typeCarte.equalsIgnoreCase("Planeswalker")) {
-			listeArpenteurs.add(carte);
+			listePlaneswalkers.add(carte);
 
 		} else if (typeCarte.equalsIgnoreCase("Instant")) {
 			listeEphemeres.add(carte);
@@ -116,7 +116,7 @@ public class ListeDeck {
 			removeCarte(listeTerrains, carte);
 
 		} else if (typeCarte.equals("Planeswalker")) {
-			removeCarte(listeArpenteurs, carte);
+			removeCarte(listePlaneswalkers, carte);
 
 		} else if (typeCarte.equals("Instant")) {
 			removeCarte(listeEphemeres, carte);
@@ -159,7 +159,7 @@ public class ListeDeck {
 		deckRit = listeToString(listeRituels, "Rituels");
 		deckEnc = listeToString(listeEnchantements, "Enchantements");
 		deckArt = listeToString(listeArtefacts, "Artefacts");
-		deckArp = listeToString(listeArpenteurs, "Arpenteurs");
+		deckArp = listeToString(listePlaneswalkers, "Planeswalkers");
 		deckTer = listeToString(listeTerrains, "Terrains");
 
 
@@ -228,7 +228,7 @@ public class ListeDeck {
 	 * 
 	 */
 	private	void sortAllNom() {
-		sortListeNom(listeArpenteurs);
+		sortListeNom(listePlaneswalkers);
 		sortListeNom(listeCreatures);
 		sortListeNom(listeEphemeres);
 		sortListeNom(listeRituels);
@@ -276,7 +276,7 @@ public class ListeDeck {
 	}
 	
 	public int nbCarte() {
-		return listeCreatures.size() + listeArpenteurs.size() + listeArtefacts.size() + listeEnchantements.size() + listeEphemeres.size() + listeRituels.size() + listeTerrains.size();
+		return listeCreatures.size() + listePlaneswalkers.size() + listeArtefacts.size() + listeEnchantements.size() + listeEphemeres.size() + listeRituels.size() + listeTerrains.size();
 	}
 
 
@@ -379,18 +379,18 @@ public class ListeDeck {
 
 
 	/**
-	 * @return the listeArpenteurs
+	 * @return the listePlaneswalkers
 	 */
-	public ArrayList<Carte> getListeArpenteurs() {
-		return listeArpenteurs;
+	public ArrayList<Carte> getListePlaneswalkers() {
+		return listePlaneswalkers;
 	}
 
 
 	/**
-	 * @param listeArpenteurs the listeArpenteurs to set
+	 * @param listePlaneswalkers the listePlaneswalkers to set
 	 */
-	public void setListeArpenteurs(ArrayList<Carte> listeArpenteurs) {
-		this.listeArpenteurs = listeArpenteurs;
+	public void setListePlaneswalkers(ArrayList<Carte> listePlaneswalkers) {
+		this.listePlaneswalkers = listePlaneswalkers;
 	}
 
 

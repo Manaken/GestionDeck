@@ -19,7 +19,7 @@ public class Deck {
 	public static final int RITUELS = 2;
 	public static final int ENCHANTEMENTS= 3;
 	public static final int ARTEFACTS = 4;
-	public static final int ARPENTEURS = 5;
+	public static final int PLANESWALKERS = 5;
 	public static final int TERRAINS = 6;
 	
 	
@@ -183,7 +183,7 @@ public class Deck {
 		nbTypesCartes[RITUELS] = getListe().getListeRituels().size();
 		nbTypesCartes[ENCHANTEMENTS] = getListe().getListeEnchantements().size();
 		nbTypesCartes[ARTEFACTS] = getListe().getListeArtefacts().size();
-		nbTypesCartes[ARPENTEURS] = getListe().getListeArpenteurs().size();
+		nbTypesCartes[PLANESWALKERS] = getListe().getListePlaneswalkers().size();
 		nbTypesCartes[TERRAINS] = getListe().getListeTerrains().size();
 		
 		return nbTypesCartes;
@@ -202,7 +202,7 @@ public class Deck {
 		listeCartes.addAll(getListe().getListeRituels());
 		listeCartes.addAll(getListe().getListeEnchantements());
 		listeCartes.addAll(getListe().getListeArtefacts());
-		listeCartes.addAll(getListe().getListeArpenteurs());
+		listeCartes.addAll(getListe().getListePlaneswalkers());
 		
 		for (Carte carte : listeCartes) {
 			cmcMoyen += carte.coutCarte();
@@ -225,7 +225,7 @@ public class Deck {
 		listeCartesComplet.addAll(getListe().getListeRituels());
 		listeCartesComplet.addAll(getListe().getListeEnchantements());
 		listeCartesComplet.addAll(getListe().getListeArtefacts());
-		listeCartesComplet.addAll(getListe().getListeArpenteurs());
+		listeCartesComplet.addAll(getListe().getListePlaneswalkers());
 		
 		
 		for (Carte carte : listeCartesComplet) {
