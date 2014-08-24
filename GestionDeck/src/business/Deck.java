@@ -14,6 +14,9 @@ import xml.XMLTools;
 
 public class Deck {
 
+	/**
+	 * Types de cartes
+	 */
 	public static final int CREATURES = 0;
 	public static final int EPHEMERES = 1;
 	public static final int RITUELS = 2;
@@ -21,10 +24,20 @@ public class Deck {
 	public static final int ARTEFACTS = 4;
 	public static final int PLANESWALKERS = 5;
 	public static final int TERRAINS = 6;
-	
-	
+
+	/** 
+	 * Couleurs des cartes
+	 */
+	public static final int BLANC = 0;
+	public static final int BLEU = 1;
+	public static final int NOIR = 2;
+	public static final int ROUGE = 3;
+	public static final int VERT = 4;
+	public static final int MULTI = 5;
+	public static final int INCOLORE = 6;
+
 	/**
-	 * Num�ro de deck
+	 * Numéro de deck
 	 */
 	private int numDeck;
 
@@ -62,7 +75,7 @@ public class Deck {
 		couleurs = "";
 		liste = new ListeDeck();
 	}
-	
+
 	/**
 	 * Constructeur d'un deck suivant un fichier plat
 	 * @param file
@@ -100,11 +113,11 @@ public class Deck {
 			if (matcher.matches()) {
 				listeLignes.add(ligne);
 			}
-			
+
 		}
 
 		liste = new ListeDeck(listeLignes);		
-		
+
 	}
 
 	/**
@@ -134,10 +147,8 @@ public class Deck {
 			}
 			XMLTools.encodeToFile(this, nomDeck);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -148,16 +159,14 @@ public class Deck {
 		try {
 			deck = (Deck)XMLTools.decodeFromFile(Singleton.getInstance().getProp().getProperty("ressources.xml.decks") + "/" + nomDeckXml);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return deck;
 	}
-	
+
 	/**
 	 * Renvoie le nombre de deck
 	 * @return
@@ -171,7 +180,7 @@ public class Deck {
 		}
 		return nbDecks;
 	}
-	
+
 	/**
 	 * Renvoie le nombre de chaque type de cartes du deck
 	 * @return
@@ -185,10 +194,10 @@ public class Deck {
 		nbTypesCartes[ARTEFACTS] = getListe().getListeArtefacts().size();
 		nbTypesCartes[PLANESWALKERS] = getListe().getListePlaneswalkers().size();
 		nbTypesCartes[TERRAINS] = getListe().getListeTerrains().size();
-		
+
 		return nbTypesCartes;
 	}
-	
+
 	/**
 	 * Donne le coût moyen en mana du deck
 	 * @return
@@ -203,14 +212,14 @@ public class Deck {
 		listeCartes.addAll(getListe().getListeEnchantements());
 		listeCartes.addAll(getListe().getListeArtefacts());
 		listeCartes.addAll(getListe().getListePlaneswalkers());
-		
+
 		for (Carte carte : listeCartes) {
 			cmcMoyen += carte.coutCarte();
 		}
-		
+
 		return (Math.round(cmcMoyen*100.0/listeCartes.size()))/100.0;
 	}
-	
+
 	/**
 	 * Renvoie la liste des cartes du deck dont le cout est celui indiqué par le paramètre en entrée
 	 * @param cmcVoulu
@@ -226,8 +235,8 @@ public class Deck {
 		listeCartesComplet.addAll(getListe().getListeEnchantements());
 		listeCartesComplet.addAll(getListe().getListeArtefacts());
 		listeCartesComplet.addAll(getListe().getListePlaneswalkers());
-		
-		
+
+
 		for (Carte carte : listeCartesComplet) {
 			if (carte.coutCarte() == cmcVoulu) {
 				listeCartes.add(carte);
@@ -237,6 +246,26 @@ public class Deck {
 			}
 		}
 		return listeCartes;
+	}
+
+	/**
+	 * Renvoie la liste des cartes 
+	 * @return
+	 */
+	public int[] getListeCarteCouleurs() {
+		int [] nbCouleursCartes = new int [7];
+
+		//#TODO 
+		// Alimenter le tableau avec les couleurs des cartes
+		nbCouleursCartes[BLANC] = getListe().getListeCreatures().size();
+		nbCouleursCartes[BLEU] = getListe().getListeEphemeres().size();
+		nbCouleursCartes[NOIR] = getListe().getListeRituels().size();
+		nbCouleursCartes[ROUGE] = getListe().getListeEnchantements().size();
+		nbCouleursCartes[VERT] = getListe().getListeArtefacts().size();
+		nbCouleursCartes[MULTI] = getListe().getListePlaneswalkers().size();
+		nbCouleursCartes[INCOLORE] = getListe().getListeTerrains().size();
+		
+		return nbCouleursCartes;
 	}
 
 	/*********************************\
