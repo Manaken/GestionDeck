@@ -3,6 +3,7 @@ package business;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -76,6 +77,23 @@ public class Deck {
 		liste = new ListeDeck();
 	}
 
+	public Deck(Deck deck) {
+		nomDeck = deck.getNomDeck();
+		numDeck = deck.getNumDeck();
+		cartePrincipale = deck.getCartePrincipale();
+		description = deck.getDescription();
+		couleurs = deck.getCouleurs();
+		liste = deck.getListe();
+
+		liste.setListe(new ArrayList<String>());
+		liste.initListeCartes(liste.getListeCreatures(), "Créatures");
+		liste.initListeCartes(liste.getListeEphemeres(), "Ephémères");
+		liste.initListeCartes(liste.getListeRituels(), "Rituels");
+		liste.initListeCartes(liste.getListeEnchantements(), "Enchantements");
+		liste.initListeCartes(liste.getListeArtefacts(), "Artefacts");
+		liste.initListeCartes(liste.getListePlaneswalkers(), "Planeswalkers");
+		liste.initListeCartes(liste.getListeTerrains(), "Terrains");
+	}
 	/**
 	 * Constructeur d'un deck suivant un fichier plat
 	 * @param file
@@ -131,7 +149,19 @@ public class Deck {
 
 		numDeck = (int)((Math.random())*nbDeck);
 		File repDecks = new File(Singleton.getInstance().getProp().getProperty("ressources.xml.decks"));
-		File[] fichiersDecks = repDecks.listFiles();
+		FilenameFilter textFilter = new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				String lowercaseName = name.toLowerCase();
+				if (lowercaseName.endsWith(".xml")) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
+		File[] fichiersDecks = repDecks.listFiles(textFilter);
+		
+		
 		Deck deck = Deck.deserialiser(fichiersDecks[numDeck].getName());
 
 		return deck;
@@ -164,6 +194,15 @@ public class Deck {
 			e.printStackTrace();
 		}
 
+		deck.getListe().setListe(new ArrayList<String>());
+		deck.getListe().initListeCartes(deck.getListe().getListeCreatures(), "Cr&eacute;atures");
+		deck.getListe().initListeCartes(deck.getListe().getListeEphemeres(), "Eph&eacute;m&egrave;res");
+		deck.getListe().initListeCartes(deck.getListe().getListeRituels(), "Rituels");
+		deck.getListe().initListeCartes(deck.getListe().getListeEnchantements(), "Enchantements");
+		deck.getListe().initListeCartes(deck.getListe().getListeArtefacts(), "Artefacts");
+		deck.getListe().initListeCartes(deck.getListe().getListePlaneswalkers(), "Planeswalkers");
+		deck.getListe().initListeCartes(deck.getListe().getListeTerrains(), "Terrains");
+
 		return deck;
 	}
 
@@ -174,7 +213,17 @@ public class Deck {
 	public static int getNbDecks() {
 		int nbDecks = 0;
 		File repDecks = new File(Singleton.getInstance().getProp().getProperty("ressources.xml.decks"));
-		File[] fichiersDecks = repDecks.listFiles();
+		FilenameFilter textFilter = new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				String lowercaseName = name.toLowerCase();
+				if (lowercaseName.endsWith(".xml")) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
+		File[] fichiersDecks = repDecks.listFiles(textFilter);
 		for (int i=0; i<fichiersDecks.length; i++) {
 			nbDecks++;
 		}

@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import single.Singleton;
 import business.Carte;
 import business.Deck;
+import javax.swing.JScrollPane;
 
 public class ChoixDeck extends JFrame {
 
@@ -56,7 +57,7 @@ public class ChoixDeck extends JFrame {
 
 		DefaultListModel<String> listeDeck = new DefaultListModel<String>();
 
-		lblImgCartePrinc = new JLabel("New label");
+		lblImgCartePrinc = new JLabel();
 		lblImgCartePrinc.setBounds(312, 94, 223, 310);
 		contentPane.add(lblImgCartePrinc);
 
@@ -77,10 +78,6 @@ public class ChoixDeck extends JFrame {
 				listeDeck.addElement(deck.getNomDeck());
 			}
 		}
-
-		list = new JList<String>(listeDeck);
-		list.setBounds(35, 93, 218, 213);
-		contentPane.add(list);
 
 		JButton btnChoixDuDeck = new JButton("Choisir le deck");
 		btnChoixDuDeck.setBounds(57, 54, 122, 23);
@@ -124,6 +121,18 @@ public class ChoixDeck extends JFrame {
 		});
 		btnChoixAlatoire.setBounds(251, 54, 129, 23);
 		contentPane.add(btnChoixAlatoire);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(35, 93, 218, 213);
+		contentPane.add(scrollPane);
+		
+		JPanel panel = new JPanel();
+		scrollPane.setViewportView(panel);
+		panel.setLayout(null);
+		
+		list = new JList<String>(listeDeck);
+		list.setBounds(0, 0, 218, 213);
+		panel.add(list);
 
 
 	}

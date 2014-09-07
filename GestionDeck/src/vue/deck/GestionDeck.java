@@ -3,24 +3,28 @@ package vue.deck;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -32,7 +36,6 @@ import org.jfree.data.general.DefaultPieDataset;
 import single.Singleton;
 import business.Carte;
 import business.Deck;
-import javax.swing.JTabbedPane;
 
 public class GestionDeck extends JFrame {
 
@@ -43,11 +46,11 @@ public class GestionDeck extends JFrame {
 	private JPanel contentPane;
 	private JTextField nomDeck;
 	private JFileChooser selectFichier;
-	private JEditorPane txtListeDeck;
 
 	private Deck deck;
 	private JLabel lblImgCartePrinc;
 	private JTextField txtCoutMoyen;
+	private JTree arbreCartes;
 
 	/**
 	 * Launch the application.
@@ -56,7 +59,8 @@ public class GestionDeck extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GestionDeck frame = new GestionDeck(Deck.deserialiser("GBW Rock.xml"));
+					Deck deck = new Deck(Deck.deserialiser("GBW Rock.xml"));
+					GestionDeck frame = new GestionDeck(deck);
 					frame.setVisible(true);
 
 				} catch (Exception e) {
@@ -73,13 +77,13 @@ public class GestionDeck extends JFrame {
 
 		this.deck = deck;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setBounds(300, 50, 935, 863);
+		setBounds(300, 30, 935, 863);
 		setTitle(this.deck.getNomDeck());
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
 		String chemin = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.import");
 		File dossierFichierImport = new File(chemin);
 		if (!dossierFichierImport.isDirectory()) {
@@ -92,6 +96,7 @@ public class GestionDeck extends JFrame {
 		contentPane.add(tabbedPane);
 
 		JPanel panel = new JPanel();
+		panel.setBackground(UIManager.getColor("Button.background"));
 		JPanel panelDetail = new JPanel();
 		tabbedPane.addTab("Généralités", null, panel, null);
 		tabbedPane.addTab("Détails", null, panelDetail, null);
@@ -102,7 +107,6 @@ public class GestionDeck extends JFrame {
 		lblImgCartePrinc.setBounds(10, 329, 223, 310);
 		panel.add(lblImgCartePrinc);
 
-		String listeDeck = this.deck.getListe().toStringName();
 		Carte carte = deck.getCartePrincipale();
 		if (carte != null) {
 			ImageIcon image = Singleton.getInstance().getImage(carte, 0);
@@ -209,65 +213,49 @@ public class GestionDeck extends JFrame {
 		cPanel2.setBounds(0, 45, 265, 200);
 		panelDetail.add(cPanel2);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(619, 29, 272, 702);
-		panel.add(scrollPane);
-		txtListeDeck = new JEditorPane("text/html", listeDeck);
-		scrollPane.setViewportView(txtListeDeck);
-		txtListeDeck.setAutoscrolls(true);
-
 		JLabel lblListeDesCartes = new JLabel("Liste des cartes du deck");
 		lblListeDesCartes.setBounds(692, 11, 158, 14);
 		panel.add(lblListeDesCartes);
 		selectFichier = new JFileChooser(dossierFichierImport);
 		selectFichier.setBounds(200, 300, 352, -229);
 		panel.add(selectFichier);
-		txtListeDeck.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				String nomCarte = GestionDeck.this.deck.getListe().getListe().get((e.getY()-(txtListeDeck.getFont().getSize()+7))/(txtListeDeck.getFont().getSize()+7));
-				Carte carte = Carte.rechercheCarte(nomCarte);
-				deck.setCartePrincipale(carte);
-				if (carte != null) {
-					carte.coutCarte();
-					lblImgCartePrinc.setIcon(null);
-					lblImgCartePrinc.setText("");
-					ImageIcon image = Singleton.getInstance().getImage(carte, 0);
-					lblImgCartePrinc.setIcon(image);
-				} else {
-					String pasImage = "Aucune carte ne correspond à ce nom";
-					lblImgCartePrinc.setText(pasImage);
-
-
-				}
-
-			}
-		});
+		arbreCartes = new JTree();
+		arbreCartes.setBounds(655, 36, 247, 750);
+		panel.add(arbreCartes);
+		arbreCartes.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		arbreCartes.setForeground(UIManager.getColor("Button.focus"));
+		arbreCartes.setBackground(UIManager.getColor("Button.background"));
+		alimenterArbreCarte(deck);
+		@SuppressWarnings("unchecked")
+		Enumeration<DefaultMutableTreeNode> e = ((DefaultMutableTreeNode)arbreCartes.getModel().getRoot()).preorderEnumeration();
+        while (e.hasMoreElements()) {
+            //Expand the current node.
+            this.arbreCartes.expandPath(new TreePath((e.nextElement()).getPath()));
+        }
+        
+        arbreCartes.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
+        	public void valueChanged(javax.swing.event.TreeSelectionEvent e) {
+        		DefaultMutableTreeNode noeud = (DefaultMutableTreeNode) 
+        				arbreCartes.getLastSelectedPathComponent();
+        		if (noeud == null)
+        			return;
+        		if (noeud.isLeaf()) {
+        			String nomCarte = noeud.toString();
+        			boolean trouve = false;
+        			for (int i =0; i<5 && !trouve; i++) {
+        				String carac = ""+nomCarte.charAt(i);
+        				if (carac.matches("[A-Za-z]")) {
+        					trouve = true;
+        					nomCarte = nomCarte.substring(i);
+        				}
+        			}
+        			Carte carte = Carte.rechercheCarte(nomCarte);
+        			ImageIcon image = Singleton.getInstance().getImage(carte, 0);
+        			lblImgCartePrinc.setIcon(image);
+        		}
+        	}
+        });
+        
 		btnEditerLaListe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String dossierDeckExport = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.export");
@@ -348,6 +336,28 @@ public class GestionDeck extends JFrame {
 			}
 		});
 
+	}
+
+	/**
+	 * Permet d'initialiser l'arbre représentant la liste des cartes du deck
+	 * @param arbreCartes
+	 * @param deck
+	 */
+	private void alimenterArbreCarte(Deck deck) {
+		DefaultMutableTreeNode racine = new DefaultMutableTreeNode("Nombre de cartes : " + deck.getListe().nbCarte());
+
+		DefaultMutableTreeNode noeud = new DefaultMutableTreeNode();
+		for (String carte : deck.getListe().getListe()) {
+			if (carte.charAt(0) != ' ') {
+				noeud = new DefaultMutableTreeNode(carte);
+				racine.add(noeud);
+				arbreCartes.setModel(new DefaultTreeModel(racine));
+
+			} else {
+				DefaultMutableTreeNode carteLeaf = new DefaultMutableTreeNode(carte);
+				noeud.add(carteLeaf);
+			}
+		}
 	}
 
 	/**

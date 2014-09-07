@@ -55,6 +55,14 @@ public class ListeDeck {
 				}
 			}
 		}
+		this.liste = new ArrayList<>();
+		initListeCartes(listeCreatures, "Cr&eacute;atures");
+		initListeCartes(listeEphemeres, "Eph&eacute;m&egrave;res");
+		initListeCartes(listeRituels, "Rituels");
+		initListeCartes(listeEnchantements, "Enchantements");
+		initListeCartes(listeArtefacts, "Artefacts");
+		initListeCartes(listePlaneswalkers, "Planeswalkers");
+		initListeCartes(listeTerrains, "Terrains");
 	}
 
 
@@ -152,7 +160,7 @@ public class ListeDeck {
 		StringBuilder deckTer = new StringBuilder();
 
 		// Réinit de la liste pour la mettre à jour
-		liste = new ArrayList<>();
+		//liste = new ArrayList<>();
 		String enTete = "Nombre de cartes : " + nbCarte() + "<br/>";
 		deckCre = listeToString(listeCreatures, "Cr&eacute;atures");
 		deckEph = listeToString(listeEphemeres, "Eph&eacute;m&egrave;res");
@@ -179,7 +187,7 @@ public class ListeDeck {
 			sb.append("<b>" + titre + " ("+ liste.size() + ")</b><br/>");
 			
 			// Tableau utilisé lors du clic sur une zone de texte comportant une liste de carte d'un deck
-			this.liste.add(titre);
+			//this.liste.add(titre);
 
 			// Nombre de fois où la carte est présente dans la liste
 			int nbCarte = 1;
@@ -193,13 +201,13 @@ public class ListeDeck {
 					nbCarte++;
 				} else {
 					sb.append("&nbsp;&nbsp;&nbsp;&nbsp;"+ nbCarte + "&nbsp;" + carte.getName() + "<br/>");
-					this.liste.add(carte.getName());
+					//this.liste.add(carte.getName());
 					nbCarte = 1;
 				}
 			}
 
 			sb.append("<br/>");
-			this.liste.add("");
+			//this.liste.add("");
 		}
 
 		return sb;
@@ -278,11 +286,40 @@ public class ListeDeck {
 	public int nbCarte() {
 		return listeCreatures.size() + listePlaneswalkers.size() + listeArtefacts.size() + listeEnchantements.size() + listeEphemeres.size() + listeRituels.size() + listeTerrains.size();
 	}
+	
+	public void initListeCartes(ArrayList<Carte>liste, String titre) {
+		
+		if (!liste.isEmpty()) {
+			
+			// Tableau utilisé lors du clic sur une zone de texte comportant une liste de carte d'un deck
+			this.liste.add(titre + " (" + liste.size() +")");
+
+			// Nombre de fois où la carte est présente dans la liste
+			int nbCarte = 1;
+			for(int i = 0; i<liste.size(); i++) {
+				Carte carte = liste.get(i);
+				Carte cartePlus1 = new Carte();
+				if (i+1 < liste.size()) {
+					cartePlus1 = liste.get(i+1);
+				}
+				if (cartePlus1.getName().equals(carte.getName())) {
+					nbCarte++;
+				} else {
+					this.liste.add(" " + nbCarte + " " + carte.getName());
+					nbCarte = 1;
+				}
+			}
+		}
+	}
+	
+	
+
 
 
 	/*********************************\
 	 ****** Getters and Setters ******
 	\*********************************/
+
 
 	/**
 	 * @return the liste
@@ -298,6 +335,24 @@ public class ListeDeck {
 	public void setListe(ArrayList<String> liste) {
 		this.liste = liste;
 	}
+
+
+	/**
+	 * @return the tabCarteLigne
+	 */
+	public String[] getTabCarteLigne() {
+		return tabCarteLigne;
+	}
+
+
+	/**
+	 * @param tabCarteLigne the tabCarteLigne to set
+	 */
+	public void setTabCarteLigne(String[] tabCarteLigne) {
+		this.tabCarteLigne = tabCarteLigne;
+	}
+
+
 	/**
 	 * @return the listeArtefacts
 	 */
@@ -409,19 +464,4 @@ public class ListeDeck {
 		this.listeTerrains = listeTerrains;
 	}
 
-
-	/**
-	 * @return the tabCarteLigne
-	 */
-	public String[] getTabCarteLigne() {
-		return tabCarteLigne;
-	}
-
-
-	/**
-	 * @param tabCarteLigne the tabCarteLigne to set
-	 */
-	public void setTabCarteLigne(String[] tabCarteLigne) {
-		this.tabCarteLigne = tabCarteLigne;
-	}
 }
