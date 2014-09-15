@@ -36,6 +36,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import single.Singleton;
 import business.Carte;
 import business.Deck;
+import java.awt.Color;
 
 public class GestionDeck extends JFrame {
 
@@ -224,7 +225,7 @@ public class GestionDeck extends JFrame {
 		panel.add(arbreCartes);
 		arbreCartes.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		arbreCartes.setForeground(UIManager.getColor("Button.focus"));
-		arbreCartes.setBackground(UIManager.getColor("Button.background"));
+		arbreCartes.setBackground(Color.WHITE);
 		alimenterArbreCarte(deck);
 		@SuppressWarnings("unchecked")
 		Enumeration<DefaultMutableTreeNode> e = ((DefaultMutableTreeNode)arbreCartes.getModel().getRoot()).preorderEnumeration();

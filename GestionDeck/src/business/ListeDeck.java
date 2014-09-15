@@ -96,9 +96,17 @@ public class ListeDeck {
 		} else if (typeCarte.equalsIgnoreCase("Instant")) {
 			listeEphemeres.add(carte);
 
-		}		
-
+		}
 		sortAllNom();
+		
+		this.liste = new ArrayList<>();
+		initListeCartes(listeCreatures, "Créatures");
+		initListeCartes(listeEphemeres, "Ephémères");
+		initListeCartes(listeRituels, "Rituels");
+		initListeCartes(listeEnchantements, "Enchantements");
+		initListeCartes(listeArtefacts, "Artefacts");
+		initListeCartes(listePlaneswalkers, "Planeswalkers");
+		initListeCartes(listeTerrains, "Terrains");
 	}
 
 	/**
@@ -131,6 +139,15 @@ public class ListeDeck {
 
 		}	
 		sortAllNom();
+		
+		this.liste = new ArrayList<>();
+		initListeCartes(listeCreatures, "Créatures");
+		initListeCartes(listeEphemeres, "Ephémères");
+		initListeCartes(listeRituels, "Rituels");
+		initListeCartes(listeEnchantements, "Enchantements");
+		initListeCartes(listeArtefacts, "Artefacts");
+		initListeCartes(listePlaneswalkers, "Planeswalkers");
+		initListeCartes(listeTerrains, "Terrains");
 	}
 	
 	private void removeCarte(ArrayList<Carte> liste, Carte carte) {
