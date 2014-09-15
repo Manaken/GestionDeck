@@ -1,5 +1,6 @@
 package vue.deck;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,11 +10,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 
+import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
@@ -34,9 +39,11 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
 import single.Singleton;
+import vue.technique.Validation;
 import business.Carte;
 import business.Deck;
-import java.awt.Color;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class GestionDeck extends JFrame {
 
@@ -77,9 +84,79 @@ public class GestionDeck extends JFrame {
 	public GestionDeck(final Deck deck) {
 
 		this.deck = deck;
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setBounds(300, 30, 935, 863);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setBounds(300, 20, 935, 879);
 		setTitle(this.deck.getNomDeck());
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFichier = new JMenu("Fichier");
+		menuBar.add(mnFichier);
+		
+		JMenuItem mntmEditerLaListe = new JMenuItem("Editer la liste");
+		mntmEditerLaListe.addActionListener(new AbstractAction() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				String dossierDeckExport = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.export");
+				File file = new File(dossierDeckExport + GestionDeck.this.deck.getNomDeck() + ".html");
+	
+				try {
+					file.createNewFile();
+					FileOutputStream out = new FileOutputStream(file);
+					String listeCarte = GestionDeck.this.deck.getListe().toStringName();
+					out.write(listeCarte.getBytes());
+					out.flush();
+					out.close();
+	
+				} catch (FileNotFoundException e) {
+	
+					e.printStackTrace();
+				} catch (IOException e) {
+	
+					e.printStackTrace();
+				}
+				
+				Validation frame = new Validation("Fichier correctement exporté", "Le fichier a bien été exporté. \n" + file.getAbsolutePath());
+				frame.setVisible(true);
+				
+				
+			}
+		});
+		mnFichier.add(mntmEditerLaListe);
+		
+		JMenuItem mntmRevenirLa = new JMenuItem("Revenir à la liste des decks");
+		mntmRevenirLa.addActionListener(new AbstractAction() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ChoixDeck frame = new ChoixDeck();
+				frame.setVisible(true);
+				GestionDeck.this.dispose();
+				
+			}
+		}
+		);
+		mnFichier.add(mntmRevenirLa);
+		
+		JMenuItem mntmQuitter = new JMenuItem("Quitter");
+		mntmQuitter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestionDeck.this.dispose();
+			}
+		});
+		mnFichier.add(mntmQuitter);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -93,7 +170,7 @@ public class GestionDeck extends JFrame {
 		}
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(2, 0, 917, 825);
+		tabbedPane.setBounds(2, 0, 917, 851);
 		contentPane.add(tabbedPane);
 
 		JPanel panel = new JPanel();
@@ -104,15 +181,6 @@ public class GestionDeck extends JFrame {
 		panel.setLayout(null);
 		panelDetail.setLayout(null);
 
-		lblImgCartePrinc = new JLabel();
-		lblImgCartePrinc.setBounds(10, 329, 223, 310);
-		panel.add(lblImgCartePrinc);
-
-		Carte carte = deck.getCartePrincipale();
-		if (carte != null) {
-			ImageIcon image = Singleton.getInstance().getImage(carte, 0);
-			lblImgCartePrinc.setIcon(image);
-		}
 
 		int [] nbTypesCartes = deck.getnbTypesCartes();
 
@@ -152,7 +220,16 @@ public class GestionDeck extends JFrame {
 		catDataset.setValue(deck.getListeCarteCMC(6, true).size(),"Nb cartes", "6+");
 		JFreeChart histoChart = ChartFactory.createBarChart("", "",
 				"", catDataset, PlotOrientation.VERTICAL, true, true, false);
+		
+		lblImgCartePrinc = new JLabel();
+		lblImgCartePrinc.setBounds(10, 268, 223, 310);
+		panel.add(lblImgCartePrinc);
 
+		Carte carte = deck.getCartePrincipale();
+		if (carte != null) {
+			ImageIcon image = Singleton.getInstance().getImage(carte, 0);
+			lblImgCartePrinc.setIcon(image);
+		}
 
 		JLabel lblNomDuDeck = new JLabel("Nom du deck");
 		lblNomDuDeck.setBounds(10, 11, 218, 26);
@@ -172,26 +249,18 @@ public class GestionDeck extends JFrame {
 		panel.add(descrDeck);
 
 		JButton btnSaisirLaListe = new JButton("Saisir la liste");
-		btnSaisirLaListe.setBounds(10, 221, 109, 23);
+		btnSaisirLaListe.setBounds(390, 209, 109, 23);
 		panel.add(btnSaisirLaListe);
 
 		JButton btnSauvegarder = new JButton("Sauvegarder");
-		btnSauvegarder.setBounds(162, 221, 118, 23);
+		btnSauvegarder.setBounds(226, 209, 118, 23);
 		panel.add(btnSauvegarder);
-
-		JButton btnRevenirLa = new JButton("Revenir à la liste");
-		btnRevenirLa.setBounds(323, 221, 150, 23);
-		panel.add(btnRevenirLa);
 		JButton btnSaisirPartir = new JButton("Saisir à partir d'un fichier");
-		btnSaisirPartir.setBounds(10, 270, 189, 23);
+		btnSaisirPartir.setBounds(10, 209, 189, 23);
 		panel.add(btnSaisirPartir);
 
-		JButton btnEditerLaListe = new JButton("Editer la liste");
-		btnEditerLaListe.setBounds(247, 270, 131, 23);
-		panel.add(btnEditerLaListe);
-
 		JLabel lblNomDeLa = new JLabel("Carte principale ");
-		lblNomDeLa.setBounds(90, 304, 109, 14);
+		lblNomDeLa.setBounds(90, 243, 109, 14);
 		panel.add(lblNomDeLa);
 
 		ChartPanel cPanel = new ChartPanel(pieChart);
@@ -213,6 +282,7 @@ public class GestionDeck extends JFrame {
 		ChartPanel cPanel2 = new ChartPanel(histoChart);
 		cPanel2.setBounds(0, 45, 265, 200);
 		panelDetail.add(cPanel2);
+		panelDetail.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblCotMoyen, txtCoutMoyen, cPanel2, cPanel}));
 
 		JLabel lblListeDesCartes = new JLabel("Liste des cartes du deck");
 		lblListeDesCartes.setBounds(692, 11, 158, 14);
@@ -226,6 +296,7 @@ public class GestionDeck extends JFrame {
 		arbreCartes.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		arbreCartes.setForeground(UIManager.getColor("Button.focus"));
 		arbreCartes.setBackground(Color.WHITE);
+		panel.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblNomDuDeck, nomDeck, lblListeDesCartes, lblDescriptionDuDeck, descrDeck, btnSaisirPartir, btnSauvegarder, btnSaisirLaListe, lblNomDeLa, lblImgCartePrinc, selectFichier, arbreCartes}));
 		alimenterArbreCarte(deck);
 		@SuppressWarnings("unchecked")
 		Enumeration<DefaultMutableTreeNode> e = ((DefaultMutableTreeNode)arbreCartes.getModel().getRoot()).preorderEnumeration();
@@ -256,30 +327,6 @@ public class GestionDeck extends JFrame {
         		}
         	}
         });
-        
-		btnEditerLaListe.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String dossierDeckExport = Singleton.getInstance().getProp().getProperty("ressources.dossier.deck.export");
-				File file = new File(dossierDeckExport + GestionDeck.this.deck.getNomDeck() + ".html");
-
-				try {
-					file.createNewFile();
-					FileOutputStream out = new FileOutputStream(file);
-					String listeCarte = GestionDeck.this.deck.getListe().toStringName();
-					out.write(listeCarte.getBytes());
-					out.flush();
-					out.close();
-
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-		});
 		btnSaisirPartir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				GestionDeck.this.selectFichier.showOpenDialog(null);
@@ -294,13 +341,6 @@ public class GestionDeck extends JFrame {
 
 			}
 
-		});
-		btnRevenirLa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ChoixDeck frame = new ChoixDeck();
-				frame.setVisible(true);
-				GestionDeck.this.dispose();
-			}
 		});
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
