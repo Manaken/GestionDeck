@@ -1,7 +1,6 @@
 package vue.deck;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +31,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
-import org.eclipse.wb.swing.FocusTraversalOnArray;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -282,7 +280,6 @@ public class GestionDeck extends JFrame {
 		ChartPanel cPanel2 = new ChartPanel(histoChart);
 		cPanel2.setBounds(0, 45, 265, 200);
 		panelDetail.add(cPanel2);
-		panelDetail.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblCotMoyen, txtCoutMoyen, cPanel2, cPanel}));
 
 		JLabel lblListeDesCartes = new JLabel("Liste des cartes du deck");
 		lblListeDesCartes.setBounds(692, 11, 158, 14);
@@ -296,7 +293,7 @@ public class GestionDeck extends JFrame {
 		arbreCartes.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		arbreCartes.setForeground(UIManager.getColor("Button.focus"));
 		arbreCartes.setBackground(Color.WHITE);
-		panel.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblNomDuDeck, nomDeck, lblListeDesCartes, lblDescriptionDuDeck, descrDeck, btnSaisirPartir, btnSauvegarder, btnSaisirLaListe, lblNomDeLa, lblImgCartePrinc, selectFichier, arbreCartes}));
+
 		alimenterArbreCarte(deck);
 		@SuppressWarnings("unchecked")
 		Enumeration<DefaultMutableTreeNode> e = ((DefaultMutableTreeNode)arbreCartes.getModel().getRoot()).preorderEnumeration();
