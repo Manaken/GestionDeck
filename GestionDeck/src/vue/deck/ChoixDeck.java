@@ -119,7 +119,7 @@ public class ChoixDeck extends JFrame {
 
 			}
 		});
-		btnChoixAlatoire.setBounds(251, 54, 129, 23);
+		btnChoixAlatoire.setBounds(378, 54, 129, 23);
 		contentPane.add(btnChoixAlatoire);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -133,6 +133,19 @@ public class ChoixDeck extends JFrame {
 		list = new JList<String>(listeDeck);
 		list.setBounds(0, 0, 218, 213);
 		panel.add(list);
+		
+		JButton btnNouveauDeck = new JButton("Nouveau deck");
+		btnNouveauDeck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Deck deck = new Deck();
+				GestionDeck frame = new GestionDeck(deck);
+				frame.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnNouveauDeck.setBounds(201, 54, 149, 23);
+		contentPane.add(btnNouveauDeck);
 
 
 	}
