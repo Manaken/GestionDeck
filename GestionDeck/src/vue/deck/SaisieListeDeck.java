@@ -1,5 +1,6 @@
 package vue.deck;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +12,14 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Vector;
 
+import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTree;
@@ -31,7 +36,6 @@ import business.Carte;
 import business.Deck;
 import business.ListeDeck;
 import ch.rakudave.suggest.JSuggestField;
-import java.awt.Color;
 
 public class SaisieListeDeck extends JFrame {
 
@@ -70,6 +74,49 @@ public class SaisieListeDeck extends JFrame {
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(500, 50, 726, 802);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFichier = new JMenu("Fichier");
+		menuBar.add(mnFichier);
+		
+		JMenuItem mntmRevenirLa = new JMenuItem("Revenir à la gestion de deck");
+		mntmRevenirLa.addActionListener(new AbstractAction() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				GestionDeck frame = new GestionDeck(deck);
+				frame.setVisible(true);
+				SaisieListeDeck.this.dispose();
+				
+			}
+		});
+		mnFichier.add(mntmRevenirLa);
+		
+		JMenuItem mntmQuitter = new JMenuItem("Quitter");
+		mntmQuitter.addActionListener(new AbstractAction() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				SaisieListeDeck.this.dispose();
+				
+			}
+		});
+		mnFichier.add(mntmQuitter);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -213,18 +260,6 @@ public class SaisieListeDeck extends JFrame {
 		btnSauvegarderDeck.setBounds(56, 502, 151, 23);
 		contentPane.add(btnSauvegarderDeck);
 
-		JButton btnRevenirSurLa = new JButton("Revenir sur la gestion de deck");
-		btnRevenirSurLa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				GestionDeck frame = new GestionDeck(deck);
-				frame.setVisible(true);
-				SaisieListeDeck.this.dispose();
-			}
-		});
-		btnRevenirSurLa.setBounds(34, 536, 188, 23);
-		contentPane.add(btnRevenirSurLa);
-
 		JLabel lblNombreDeCartes = new JLabel("Nombre de cartes à ajouter");
 		lblNombreDeCartes.setBounds(10, 49, 161, 14);
 		contentPane.add(lblNombreDeCartes);
@@ -285,13 +320,13 @@ public class SaisieListeDeck extends JFrame {
 	 */
 	private void alimenterArbreCarte(Deck deck) {
 		DefaultMutableTreeNode racine = new DefaultMutableTreeNode("Nombre de cartes : " + deck.getListe().nbCarte());
+		arbreCartes.setModel(new DefaultTreeModel(racine));
 
 		DefaultMutableTreeNode noeud = new DefaultMutableTreeNode();
 		for (String carte : deck.getListe().getListe()) {
 			if (carte.charAt(0) != ' ') {
 				noeud = new DefaultMutableTreeNode(carte);
 				racine.add(noeud);
-				arbreCartes.setModel(new DefaultTreeModel(racine));
 
 			} else {
 				DefaultMutableTreeNode carteLeaf = new DefaultMutableTreeNode(carte);

@@ -195,8 +195,8 @@ public class Deck {
 		}
 
 		deck.getListe().setListe(new ArrayList<String>());
-		deck.getListe().initListeCartes(deck.getListe().getListeCreatures(), "Cr&eacute;atures");
-		deck.getListe().initListeCartes(deck.getListe().getListeEphemeres(), "Eph&eacute;m&egrave;res");
+		deck.getListe().initListeCartes(deck.getListe().getListeCreatures(), "Créatures");
+		deck.getListe().initListeCartes(deck.getListe().getListeEphemeres(), "Ephémères");
 		deck.getListe().initListeCartes(deck.getListe().getListeRituels(), "Rituels");
 		deck.getListe().initListeCartes(deck.getListe().getListeEnchantements(), "Enchantements");
 		deck.getListe().initListeCartes(deck.getListe().getListeArtefacts(), "Artefacts");

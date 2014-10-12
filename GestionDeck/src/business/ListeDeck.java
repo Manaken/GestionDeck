@@ -6,8 +6,6 @@ import java.util.StringTokenizer;
 public class ListeDeck {
 
 	private ArrayList<String> liste;
-
-	private String [] tabCarteLigne;
 	private ArrayList<Carte> listeArtefacts;
 	private ArrayList<Carte> listeCreatures;
 	private ArrayList<Carte> listeEnchantements;
@@ -18,7 +16,6 @@ public class ListeDeck {
 
 	public ListeDeck() {
 		liste = new ArrayList<>();
-		tabCarteLigne = new String[300];
 		listeArtefacts = new ArrayList<>();
 		listeCreatures = new ArrayList<>();
 		listeEnchantements = new ArrayList<>();
@@ -56,8 +53,8 @@ public class ListeDeck {
 			}
 		}
 		this.liste = new ArrayList<>();
-		initListeCartes(listeCreatures, "Cr&eacute;atures");
-		initListeCartes(listeEphemeres, "Eph&eacute;m&egrave;res");
+		initListeCartes(listeCreatures, "Créatures");
+		initListeCartes(listeEphemeres, "Ephémères");
 		initListeCartes(listeRituels, "Rituels");
 		initListeCartes(listeEnchantements, "Enchantements");
 		initListeCartes(listeArtefacts, "Artefacts");
@@ -179,8 +176,8 @@ public class ListeDeck {
 		// Réinit de la liste pour la mettre à jour
 		//liste = new ArrayList<>();
 		String enTete = "Nombre de cartes : " + nbCarte() + "<br/>";
-		deckCre = listeToString(listeCreatures, "Cr&eacute;atures");
-		deckEph = listeToString(listeEphemeres, "Eph&eacute;m&egrave;res");
+		deckCre = listeToString(listeCreatures, "Créatures");
+		deckEph = listeToString(listeEphemeres, "Ephémères");
 		deckRit = listeToString(listeRituels, "Rituels");
 		deckEnc = listeToString(listeEnchantements, "Enchantements");
 		deckArt = listeToString(listeArtefacts, "Artefacts");
@@ -352,23 +349,6 @@ public class ListeDeck {
 	public void setListe(ArrayList<String> liste) {
 		this.liste = liste;
 	}
-
-
-	/**
-	 * @return the tabCarteLigne
-	 */
-	public String[] getTabCarteLigne() {
-		return tabCarteLigne;
-	}
-
-
-	/**
-	 * @param tabCarteLigne the tabCarteLigne to set
-	 */
-	public void setTabCarteLigne(String[] tabCarteLigne) {
-		this.tabCarteLigne = tabCarteLigne;
-	}
-
 
 	/**
 	 * @return the listeArtefacts

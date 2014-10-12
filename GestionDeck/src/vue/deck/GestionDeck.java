@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 import javax.swing.AbstractAction;
@@ -92,7 +93,54 @@ public class GestionDeck extends JFrame {
 		JMenu mnFichier = new JMenu("Fichier");
 		menuBar.add(mnFichier);
 		
-		JMenuItem mntmEditerLaListe = new JMenuItem("Editer la liste");
+		JMenuItem mntmRevenirLa = new JMenuItem("Revenir à la liste des decks");
+		mntmRevenirLa.addActionListener(new AbstractAction() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ChoixDeck frame = new ChoixDeck();
+				frame.setVisible(true);
+				GestionDeck.this.dispose();
+				
+			}
+		});
+		mnFichier.add(mntmRevenirLa);
+
+		JMenuItem mntmQuitter = new JMenuItem("Quitter");
+		mntmQuitter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestionDeck.this.dispose();
+			}
+		});
+		mnFichier.add(mntmQuitter);
+		
+		JMenu mnDeck = new JMenu("Import / Export");
+		menuBar.add(mnDeck);
+		
+		JMenuItem mntmEditerLaListe = new JMenuItem("Exporter le deck");
+		mnDeck.add(mntmEditerLaListe);
+		
+		
+		JMenuItem mntmSaisirPartir = new JMenuItem("Importer à partir d'un fichier");
+		mnDeck.add(mntmSaisirPartir);
+		mntmSaisirPartir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestionDeck.this.selectFichier.showOpenDialog(null);
+				Deck deck = new Deck();
+				if (selectFichier.getSelectedFile() != null) {
+					deck = new Deck(selectFichier.getSelectedFile());
+					GestionDeck.this.deck = deck;
+					GestionDeck frame = new GestionDeck(deck);
+					frame.setVisible(true);
+					GestionDeck.this.dispose();
+				}
+			}
+		});
 		mntmEditerLaListe.addActionListener(new AbstractAction() {
 			
 			/**
@@ -127,34 +175,7 @@ public class GestionDeck extends JFrame {
 				
 			}
 		});
-		mnFichier.add(mntmEditerLaListe);
 		
-		JMenuItem mntmRevenirLa = new JMenuItem("Revenir à la liste des decks");
-		mntmRevenirLa.addActionListener(new AbstractAction() {
-			
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				ChoixDeck frame = new ChoixDeck();
-				frame.setVisible(true);
-				GestionDeck.this.dispose();
-				
-			}
-		}
-		);
-		mnFichier.add(mntmRevenirLa);
-		
-		JMenuItem mntmQuitter = new JMenuItem("Quitter");
-		mntmQuitter.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				GestionDeck.this.dispose();
-			}
-		});
-		mnFichier.add(mntmQuitter);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -247,15 +268,12 @@ public class GestionDeck extends JFrame {
 		panel.add(descrDeck);
 
 		JButton btnSaisirLaListe = new JButton("Saisir la liste");
-		btnSaisirLaListe.setBounds(390, 209, 109, 23);
+		btnSaisirLaListe.setBounds(246, 209, 109, 23);
 		panel.add(btnSaisirLaListe);
 
 		JButton btnSauvegarder = new JButton("Sauvegarder");
-		btnSauvegarder.setBounds(226, 209, 118, 23);
+		btnSauvegarder.setBounds(42, 209, 118, 23);
 		panel.add(btnSauvegarder);
-		JButton btnSaisirPartir = new JButton("Saisir à partir d'un fichier");
-		btnSaisirPartir.setBounds(10, 209, 189, 23);
-		panel.add(btnSaisirPartir);
 
 		JLabel lblNomDeLa = new JLabel("Carte principale ");
 		lblNomDeLa.setBounds(90, 243, 109, 14);
@@ -324,21 +342,6 @@ public class GestionDeck extends JFrame {
         		}
         	}
         });
-		btnSaisirPartir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				GestionDeck.this.selectFichier.showOpenDialog(null);
-				Deck deck = new Deck();
-				if (selectFichier.getSelectedFile() != null) {
-					deck = new Deck(selectFichier.getSelectedFile());
-					GestionDeck.this.deck = deck;
-					GestionDeck frame = new GestionDeck(deck);
-					frame.setVisible(true);
-					GestionDeck.this.dispose();
-				}
-
-			}
-
-		});
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!nomDeck.getText().isEmpty()) {
@@ -383,13 +386,15 @@ public class GestionDeck extends JFrame {
 	 */
 	private void alimenterArbreCarte(Deck deck) {
 		DefaultMutableTreeNode racine = new DefaultMutableTreeNode("Nombre de cartes : " + deck.getListe().nbCarte());
-
+		arbreCartes.setModel(new DefaultTreeModel(racine));
+		
 		DefaultMutableTreeNode noeud = new DefaultMutableTreeNode();
-		for (String carte : deck.getListe().getListe()) {
+		ArrayList<String> liste = new ArrayList<>();
+		liste = deck.getListe().getListe();
+		for (String carte : liste) {
 			if (carte.charAt(0) != ' ') {
 				noeud = new DefaultMutableTreeNode(carte);
 				racine.add(noeud);
-				arbreCartes.setModel(new DefaultTreeModel(racine));
 
 			} else {
 				DefaultMutableTreeNode carteLeaf = new DefaultMutableTreeNode(carte);
